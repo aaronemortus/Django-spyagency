@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load static %}
+{% load users_tags %}
+
+{% block title %}Users List{% endblock %}
+
+{% block content %}
+<section>
+	{% if messages %}
+		 {% for message in messages %}
+			 <div class="alert alert-dismissible alert-{{ message.tags }}">
+				 <button type="button" class="close" data-dismiss="alert">
+				 ×
+				 </button>
+				 <strong>{{message}}<strong>
+			 </div>
+		{% endfor %}
+	 {% endif %}
+	<div class="table-hits table-responsive">
+		<table class="table table-hover table-dark">
+			<thead>
+					<tr>
+						<th colspan="5" scope="col"><i class="fa fa-list"></i> MY PEOPLE</th>
+					</tr>
+			    <tr>
+						<th scope="col">#</th>
+			     	<th scope="col">USERNAME</th>
+			     	<th scope="col">EMAIL</th>
+						<th scope="col">STATUS</th>
+						{% if request.user|has_group:'bigboss' %}
+							<th scope="col">IS ASSIGNED</th>
+						{% endif %}
+			    </tr>
+		  	</thead>
+		  	<tbody>
+				{% for object in object_list %}
+					{% if request.user|has_group:'manager' %}
+				    <tr>
+								<td><a href="{% url 'users:update' object.lackey_id %}">{{object.lackey_id}}</a></td>
+				        <td>{{ object.lackey.username }}</td>
+								<td>{{ object.lackey.email }}</td>
+								<td>{% if object.lackey.is_active %}Is alive{% else %}<span class="text-danger">Is dead</span>{% endif %}</td>
+				    </tr>
+					{% else %}
+					<tr>
+							<td><a href="{% url 'users:update' object.id %}">{{object.id}}</a></td>
+							<td>{{ object.username }}</td>
+							<td>{{ object.email }}</td>
+							<td>{% if object.is_active %}Is alive{% else %}<span class="text-danger">Is dead</span>{% endif %}</td>
+							<td>
+								{% if object.lackey.manager %}
+									{{object.lackey.manager}}
+								{% else %}
+									{% if object.manager.manager %}
+										He is a manager
+									{% else %}										
+										<span class="text-danger">Not assigned</span>
+									{% endif %}
+								{% endif %}
+							</td>
+					</tr>
+					{% endif %}
+				{% endfor %}
+		  	</tbody>
+		</table>
+	</div>
+
+	<nav>
+	    {% if is_paginated %}
+	        <ul class="pagination">
+	            {% if page_obj.has_previous %}
+	                <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+	            {% endif %}
+
+	            {% for i in paginator.page_range %}
+	                <li {% if page_obj.number == i %} class="active" {% endif %}>
+	                    <a href="?page={{i}}">{{ i }}</a>
+	                </li>
+	            {% endfor %}
+
+	            {% if page_obj.has_next %}
+	                <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+	            {% endif %}
+	        </ul>
+	    {% endif %}
+	</nav>
+</section>
+{% endblock %}

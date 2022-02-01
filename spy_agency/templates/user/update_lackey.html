@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% load users_tags %}
+
+{% block title %}Update User{% endblock %}
+
+{% block content %}
+	<section>
+		<form method="post">
+        {% csrf_token %}
+
+				<div class="card w-75 mx-auto h-100">
+					<div class="card-header">
+						<h4><i class="fa fa-user-circle"></i> {{form.instance.lackey}}</h4>
+					</div>
+            <div class="card-body">
+							<dl class="row">
+								<dt class="col-sm-7">Username:</dt>
+								<dd class="col-sm-5">{{form.instance.lackey.username}}</dd>
+							</dl>
+							<dl class="row">
+								<dt class="col-sm-7">Email:</dt>
+								<dd class="col-sm-5">{{form.instance.lackey.email}}</dd>
+							</dl>
+							<dl class="row">
+								<dt class="col-sm-7">Role:</dt>
+								<dd class="col-sm-5">{{form.instance.lackey.groups.all.0 }}</dd>
+							</dl>
+							<dl class="row">
+								<dt class="col-sm-7">Manager:</dt>
+								<dd class="col-sm-5">{{form.manager}}{{form.manager.errors}}</dd>
+							</dl>
+            </div>
+        </div>
+  		<input type="submit" value="Update" class="mt-4 btn btn-dark">
+    </form>
+	</section>
+{% endblock %}

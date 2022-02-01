@@ -1,0 +1,93 @@
+[{
+    "model": "users.lackey",
+    "pk": 1,
+    "fields": {
+        "manager": 1,
+        "lackey": 5
+    }
+},
+{
+    "model": "users.lackey",
+    "pk": 2,
+    "fields": {
+        "manager": 1,
+        "lackey": 6
+    }
+},
+{
+    "model": "users.lackey",
+    "pk": 3,
+    "fields": {
+        "manager": 1,
+        "lackey": 7
+    }
+},
+{
+    "model": "users.lackey",
+    "pk": 4,
+    "fields": {
+        "manager": 2,
+        "lackey": 8
+    }
+},
+{
+    "model": "users.lackey",
+    "pk": 5,
+    "fields": {
+        "manager": 2,
+        "lackey": 9
+    }
+},
+{
+    "model": "users.lackey",
+    "pk": 6,
+    "fields": {
+        "manager": 2,
+        "lackey": 10
+    }
+},
+{
+    "model": "users.lackey",
+    "pk": 7,
+    "fields": {
+        "manager": 3,
+        "lackey": 11
+    }
+},
+{
+    "model": "users.lackey",
+    "pk": 8,
+    "fields": {
+        "manager": 3,
+        "lackey": 12
+    }
+},
+{
+    "model": "users.lackey",
+    "pk": 9,
+    "fields": {
+        "manager": 3,
+        "lackey": 13
+    }
+},
+{
+    "model": "users.manager",
+    "pk": 1,
+    "fields": {
+        "manager": 2
+    }
+},
+{
+    "model": "users.manager",
+    "pk": 2,
+    "fields": {
+        "manager": 3
+    }
+},
+{
+    "model": "users.manager",
+    "pk": 3,
+    "fields": {
+        "manager": 4
+    }
+}]

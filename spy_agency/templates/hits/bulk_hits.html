@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+{% load users_tags %}
+
+{% block title %}Bulk Hits{% endblock %}
+
+{% block content %}
+
+<section>
+	{% if messages %}
+		 {% for message in messages %}
+			 <div class="alert alert-dismissible alert-{{ message.tags }}">
+				 <button type="button" class="close" data-dismiss="alert">
+				 ×
+				 </button>
+				 <strong>{{message}}<strong>
+			 </div>
+		{% endfor %}
+	 {% endif %}
+	<div class="table-hits table-responsive">
+		<form method="post" autocomplete="off">
+			{% csrf_token %}
+		<table id ="bulk-table" class="table table-hover table-dark">
+			<thead>
+					<tr>
+						<th colspan="6" scope="col"><i class="fa fa-list"></i> ACTIVE HITS</th>
+					</tr>
+			    <tr>
+						<th scope="col">#</th>
+			     	<th scope="col">ASIGNEE</th>
+			     	<th scope="col">TARGET</th>
+			     	<th scope="col">DESCRIPTION</th>
+			     	<th scope="col">STATUS</th>
+			     	<th scope="col">CREATOR</th>
+			    </tr>
+		  	</thead>
+		  	<tbody>
+						{{ formset.management_form }}
+						{% for form in formset %}
+							<tr>
+									<td>{{ form.instance.id }}</td>
+									<td>{{ form.assignee }}{{ form.id }}{{form.assignee.errors}}</td>
+									<td>{{ form.instance.target }}</td>
+									<td>{{ form.instance.description }}</td>
+									<td>{{ form.instance.get_status_display }}</td>
+									<td>{{ form.instance.creator }}</td>
+							</tr>
+						{% endfor %}
+				</tbody>
+		</table>
+		<input type="submit" value="Bulk" class="pull-right mt-4 btn btn-dark">
+		</form>
+	</div>
+	<nav>
+	    {% if is_paginated %}
+	        <ul class="pagination">
+	            {% if page_obj.has_previous %}
+	                <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+	            {% endif %}
+
+	            {% for i in paginator.page_range %}
+	                <li {% if page_obj.number == i %} class="active" {% endif %}>
+	                    <a href="?page={{i}}">{{ i }}</a>
+	                </li>
+	            {% endfor %}
+
+	            {% if page_obj.has_next %}
+	                <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+	            {% endif %}
+	        </ul>
+	    {% endif %}
+	</nav>
+{% endblock %}

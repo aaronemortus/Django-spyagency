@@ -1,0 +1,304 @@
+[
+{
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+        "name": "bigboss",
+        "permissions": []
+    }
+},
+{
+    "model": "auth.group",
+    "pk": 2,
+    "fields": {
+        "name": "manager",
+        "permissions": []
+    }
+},
+{
+    "model": "auth.group",
+    "pk": 3,
+    "fields": {
+        "name": "hitman",
+        "permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$ISwWhycFccpnmOaZXGYPVH$8W8QOuRWwvg+lr5ssrEveQGr87q3nFslUeTffftj924=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "giuseppi",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2022-01-27T07:23:17.754Z",
+        "email": "giuseppi@spyagency.com",
+        "groups": [
+            1
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$VCQsxjX5fGeyytpMHakffi$hnq9D0aPM8WLsOIJM6z+srVa5SIHvw57No8oy/hfaQM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "manager1",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2022-01-27T07:22:49.166Z",
+        "email": "manager1@spyagency.com",
+        "groups": [
+            2
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$VCQsxjX5fGeyytpMHakffi$hnq9D0aPM8WLsOIJM6z+srVa5SIHvw57No8oy/hfaQM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "manager2",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2022-01-27T07:22:49.166Z",
+        "email": "manager2@spyagency.com",
+        "groups": [
+            2
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$VCQsxjX5fGeyytpMHakffi$hnq9D0aPM8WLsOIJM6z+srVa5SIHvw57No8oy/hfaQM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "manager3",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2022-01-27T07:22:49.166Z",
+        "email": "manager3@spyagency.com",
+        "groups": [
+            2
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$BHft3W7zw041QI8HemS3B3$QpUZO2vaqcJzkkWw0IsKXEOMhBYoE+j3iswrIVNTG7c=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "hitman1",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2022-01-27T07:21:51Z",
+        "email": "hitman1@spyagency.com",
+        "groups": [
+            3
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$BHft3W7zw041QI8HemS3B3$QpUZO2vaqcJzkkWw0IsKXEOMhBYoE+j3iswrIVNTG7c=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "hitman2",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2022-01-27T07:21:51Z",
+        "email": "hitman2@spyagency.com",
+        "groups": [
+            3
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$BHft3W7zw041QI8HemS3B3$QpUZO2vaqcJzkkWw0IsKXEOMhBYoE+j3iswrIVNTG7c=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "hitman3",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2022-01-27T07:21:51Z",
+        "email": "hitman3@spyagency.com",
+        "groups": [
+            3
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 8,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$BHft3W7zw041QI8HemS3B3$QpUZO2vaqcJzkkWw0IsKXEOMhBYoE+j3iswrIVNTG7c=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "hitman4",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2022-01-27T07:21:51Z",
+        "email": "hitman4@spyagency.com",
+        "groups": [
+            3
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 9,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$BHft3W7zw041QI8HemS3B3$QpUZO2vaqcJzkkWw0IsKXEOMhBYoE+j3iswrIVNTG7c=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "hitman5",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2022-01-27T07:21:51Z",
+        "email": "hitman5@spyagency.com",
+        "groups": [
+            3
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 10,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$BHft3W7zw041QI8HemS3B3$QpUZO2vaqcJzkkWw0IsKXEOMhBYoE+j3iswrIVNTG7c=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "hitman6",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2022-01-27T07:21:51Z",
+        "email": "hitman6@spyagency.com",
+        "groups": [
+            3
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 11,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$BHft3W7zw041QI8HemS3B3$QpUZO2vaqcJzkkWw0IsKXEOMhBYoE+j3iswrIVNTG7c=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "hitman7",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2022-01-27T07:21:51Z",
+        "email": "hitman7@spyagency.com",
+        "groups": [
+            3
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 12,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$BHft3W7zw041QI8HemS3B3$QpUZO2vaqcJzkkWw0IsKXEOMhBYoE+j3iswrIVNTG7c=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "hitman8",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2022-01-27T07:21:51Z",
+        "email": "hitman8@spyagency.com",
+        "groups": [
+            3
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 13,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$BHft3W7zw041QI8HemS3B3$QpUZO2vaqcJzkkWw0IsKXEOMhBYoE+j3iswrIVNTG7c=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "hitman9",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2022-01-27T07:21:51Z",
+        "email": "hitman9@spyagency.com",
+        "groups": [
+            3
+        ],
+        "user_permissions": []
+    }
+},
+{
+    "model": "users.user",
+    "pk": 14,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$DMOp3vIRAonRHEMAsTI0OE$hsdvYn3pCvZ2szFRbsBc1FxQmCE08NerIeXVcrXtJzM=",
+        "last_login": "2022-01-28T05:59:00.551Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2022-01-27T07:07:30.866Z",
+        "email": "admin@admin.com",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]

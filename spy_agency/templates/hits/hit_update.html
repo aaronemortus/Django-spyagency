@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static %}
+{% load users_tags %}
+
+{% block title %}Hit details{% endblock %}
+
+{% block content %}
+	<section>
+		{% if messages %}
+			 {% for message in messages %}
+				 <div class="alert alert-dismissible alert-{{ message.tags }}">
+					 <button type="button" class="close" data-dismiss="alert">
+					 ×
+					 </button>
+					 <strong>{{message}}<strong>
+				 </div>
+			{% endfor %}
+		 {% endif %}
+		<form method="post" autocomplete="off" novalidate>
+			{% csrf_token %}
+			<div class="card w-75 mx-auto h-100">
+				<div class="card-header">
+					<h4><i class="fa fa-user-circle"></i> HIT DETAILS</h4>
+				</div>
+				<div class="card-body">
+					<dl class="row">
+						<dt class="col-sm-7">Creator:</dt>
+						<dd class="col-sm-5">{{ object.creator }}</dd>
+					</dl>
+					<dl class="row">
+						<dt class="col-sm-7">Asignee:</dt>
+						<dd class="col-sm-5">
+							{% if not request.user|has_group:'hitman' %}
+								{% if object.status == 'assigned'%}
+									{{ form.assignee }}
+									{{ form.assignee.errors }}
+								{% else %}
+									{% if form.assignee.errors %}
+										{{form.assignee}}
+										{{ form.assignee.errors }}
+									{% else %}
+										{{ object.assignee }}
+									{% endif %}
+								{% endif %}
+							{% else %}
+								{{ object.assignee }}
+							{% endif %}
+						</dd>
+					</dl>
+					<dl class="row">
+						<dt class="col-sm-7">Target:</dt>
+						<dd class="col-sm-5">{{ object.target }}</dd>
+					</dl>
+					<dl class="row">
+						<dt class="col-sm-7">Description:</dt>
+						<dd class="col-sm-5">{{ object.description }}</dd>
+					</dl>
+					<dl class="row">
+						<dt class="col-sm-7">Status:</dt>
+						<dd class="col-sm-5">
+							{% if object.status == 'assigned'%}
+								{{ form.status }}
+								{{ form.status.errors }}
+							{% else %}
+								{% if form.assignee.errors %}
+									{{form.status}}
+								{% else %}
+									{{ object.get_status_display }}
+								{% endif %}
+							{% endif %}
+						</dd>
+					</dl>
+				</div>
+			</div>
+			{% if object.status == 'assigned' %}
+				<input type="submit" value="Update" class="pull-right mt-4 btn btn-dark">
+			{% else %}
+				{% if form.assignee.errors %}
+					<input type="submit" value="Update" class="pull-right mt-4 btn btn-dark">
+				{% endif %}
+			{% endif %}
+		</form>
+	</section>
+{% endblock %}
