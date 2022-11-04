@@ -1,5 +1,5 @@
 
-# Jüsto challenge
+# Django challenge
 ## Stack
  1. Django 3.2.11
  2. Python 3.6.8
